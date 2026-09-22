@@ -41,6 +41,7 @@ ts-mullvad list --country any
 ts-mullvad on --country US
 ts-mullvad on --country DE
 ts-mullvad on --city "New York"
+ts-mullvad on --no-lan
 ts-mullvad off
 ts-mullvad status
 ```
@@ -100,3 +101,7 @@ This project does not run a server and does not need a cloud account. It only ta
 - your local Tailscale CLI
 - Mullvad's public checker when you run `verify`
 - Tailscale/Mullvad docs links when you click setup links
+
+## Tests
+
+Run `python3 -m unittest discover -s tests -v`. Tests mock Tailscale commands and do not change network settings.
