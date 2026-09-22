@@ -190,8 +190,7 @@ def no_mullvad_message():
 
 def set_exit_node(node_name, allow_lan=True):
     args = [tailscale_bin(), "set", f"--exit-node={node_name}"]
-    if allow_lan:
-        args.append("--exit-node-allow-lan-access=true")
+    args.append(f"--exit-node-allow-lan-access={str(allow_lan).lower()}")
     run(args, capture=True)
 
 
